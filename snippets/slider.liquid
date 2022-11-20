@@ -1,0 +1,19 @@
+  <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      {% for product in collections['frontpage-1'].products %}
+
+        
+          <div class="swiper-slide"><a href="{{ product.url }}"><img src="{{ product.featured_image | image_url }}" class="intro_item"></a></div>
+      {% endfor %}
+
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+  </div>

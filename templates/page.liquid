@@ -1,1 +1,7 @@
 <h1>something?</h1>
+
+{{ pages['about-us'].title }}
+
+{% for page in pages %}
+  <h1>{{ page.title | link_to: page.url }}</h1><br /><br />
+{% endfor %}

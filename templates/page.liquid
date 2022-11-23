@@ -1,7 +1,11 @@
-<h1>something?</h1>
-
-{{ pages['about-us'].title }}
-
 {% for page in pages %}
-  <h1>{{ page.title | link_to: page.url }}</h1><br /><br />
+  {% if canonical_url contains "about" and page.title == "About" %}
+    <h1>{{ page.title }}</h1><br />
+    {{ page.content }}
+  {% endif %}
+  {% if canonical_url contains "contact" and page.title == "Contact" %}
+    <h1>{{ page.title }}</h1><br />
+    {{ page.content }}
+    do de do!
+  {% endif %}
 {% endfor %}

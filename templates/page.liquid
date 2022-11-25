@@ -1,11 +1,5 @@
-{% for page in pages %}
-  {% if canonical_url contains "about" and page.title == "About" %}
-    <h1>{{ page.title }}</h1><br />
-    {{ page.content }}
-  {% endif %}
-  {% if canonical_url contains "contact" and page.title == "Contact" %}
-    <h1>{{ page.title }}</h1><br />
-    {{ page.content }}
-    do de do!
-  {% endif %}
-{% endfor %}
+
+<h1>{{ page.title }}</h1>
+
+<p>{{ page.content }}</p>
+

@@ -1,14 +1,13 @@
 <header>
 	<label for="checkbox_toggle" id="hamburger">&#9776;</label>
 	<h1 id="logo_name">{{ shop.name }}</h1>
-	<h1 id="mobile_name">cttd</h1>  
 	<nav id="desktop_nav">
 		<ul id="desktop_menu">
 			{% for link in linklists.main-menu.links -%}
 				<li><a href="{{ link.url }}" class="menu_link">{{ link.title }}</a></li>
 			{%- endfor %}
 			<li>
-				<a href="/" class="menu_link"><img src="{{ 'insta.png' | asset_url }}" alt="instagram logo" class="social"></a>
+				<a href="https://www.instagram.com/crazytimestiedyes/" class="menu_link"><img src="{{ 'insta.png' | asset_url }}" alt="instagram logo" class="social"></a>
 			</li>
 		</ul>
 	</nav>
@@ -20,7 +19,7 @@
 				<li><a href="{{ link.url }}" class="menu_link">{{ link.title }}</a></li>
 			{%- endfor %}
 			<li id="social_strip">
-				<a href="/" class="menu_link"><img src="{{ 'insta.png' | asset_url }}" alt="instagram logo" class="social"></a>
+				<a href="https://www.instagram.com/crazytimestiedyes/" class="menu_link"><img src="{{ 'insta.png' | asset_url }}" alt="instagram logo" class="social"></a>
 			</li>
 		</ul>
 

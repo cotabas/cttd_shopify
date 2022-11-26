@@ -5,15 +5,20 @@ body {
   margin: 0;
   display: grid;
   grid-template-rows: 5em auto auto;
-  background: linear-gradient(164deg, rgb(43, 43, 43) 0%, rgb(84, 82, 84) 52%, rgb(184, 184, 183) 100%);
+  background-color: #3b3b3b;
+  /* background: linear-gradient(164deg, rgb(43, 43, 43) 0%, rgb(84, 82, 84) 30%, rgb(184, 184, 183) 100%); */
   height: 100vh;
   color: white;
 }
 #mobile_nav {
-  display: none;
+  display: flex;
   position: fixed;
   top: 2.5em;
-  width: 100vw;
+  width: 0;
+  height: 100vh;
+  background-color: #3b3b3b;
+  opacity: 95%;
+  transition: width 1s; 
 }
 #desktop_nav {
   display: flex;
@@ -21,6 +26,7 @@ body {
   align-items: center;
 }
 #desktop_menu {
+  /* position: absolute; */
   display: flex;
   gap: 1em;
   padding-right: 1em;
@@ -34,6 +40,7 @@ li {
   display: flex;
   flex-direction: column;
   padding-left: 1em;
+  overflow: hidden;
 }
 
 input[type=checkbox] {
@@ -44,17 +51,20 @@ input[type=checkbox] {
  }
 header {
   width: 100vw;
+  height: fit-content;
   display: flex;
   justify-content: space-between;
   position: sticky;
   top: 0;
   padding: 0;
   z-index: 9999;
+  background-color: #3b3b3b;
+  opacity: 90%;
 }
-header h1, header label {
+/* header h1, header label {
   padding: 0 .5em;
   padding-bottom: 1em;
-}
+} */
 #hamburger {
   display: none;
   font-size: 2em;
@@ -90,6 +100,20 @@ nav {
   opacity: 70%;
 }
 
+#logo_name {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0;
+}
+
+.page_container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80vw;
+  height: fit-content;
+  padding-left: 3rem;
+}
 
 /* Swiper stuff */
 .swiper, .intro_item {
@@ -106,6 +130,31 @@ nav {
   background: white;
 }
 
+/* waves footer stuff */
+
+.custom-shape-divider-bottom-1669434300 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  z-index: -2;
+}
+
+.custom-shape-divider-bottom-1669434300 svg {
+  position: relative;
+  display: block;
+  width: calc(172% + 1.3px);
+  height: 196px;
+  z-index: -2;
+}
+
+.custom-shape-divider-bottom-1669434300 .shape-fill {
+  fill: #5C5A5C;
+}
+
 @media screen and (max-width: 800px) {
   /* body {
     height: 100%;
@@ -113,13 +162,13 @@ nav {
   #desktop_nav {
     display: none;
   }
-  #logo_name {
+  /* #logo_name {
     display: none;
   }
   #mobile_name {
     display: block;
     margin: 0;
-  }
+  } */
   #hamburger {
     display: flex;
   }
@@ -128,7 +177,9 @@ nav {
     flex-direction: column;
   }
   #checkbox_toggle:checked ~ #mobile_nav {
-    display: flex;
+    width: 30vw;
+    transition: width 1s;
+
   }
   
 }

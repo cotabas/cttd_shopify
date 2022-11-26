@@ -1,22 +1,28 @@
-<h1>{{ page.title }}</h1>
-
-<p>{{ page.content }}</p>
-
-{% form 'contact' %}
-  {{ form.errors | default_errors }}
-  <div class="first-name">
-    <label for="first-name">First name</label>
-    <input type="text" name="contact[first_name]" id="first-name" />
+<div class="page_container">
+  <div class="page_title">
+    <h1>{{ page.title }}</h1>
   </div>
-  <div class="email">
-    <label for="email">Email</label>
-    <input type="email" name="contact[email]" />
+  <div class="page_content">
+    <p>{{ page.content }}</p>
   </div>
-  <div class="message">
-    <label for="message">Message</label>
-    <textarea name="contact[body]" id="message"></textarea>
+  <div class="page_content">
+    {% form 'contact' %}
+      {{ form.errors | default_errors }}
+      <div class="first-name page_form_item">
+        <label for="first-name">First name</label>
+        <input type="text" name="contact[first_name]" id="first-name" />
+      </div>
+      <div class="email page_form_item">
+        <label for="email">Email *</label>
+        <input type="email" name="contact[email]" required />
+      </div>
+      <div class="message page_form_item">
+        <label for="message">Message</label>
+        <textarea name="contact[body]" id="message"></textarea>
+      </div>
+      <div class="submit page_form_item">
+        <input type="submit" value="Send" id="send_button" />
+      </div>
+    {% endform %}
   </div>
-  <div class="submit">
-    <input type="submit" value="Send" />
-  </div>
-{% endform %}
+</div>

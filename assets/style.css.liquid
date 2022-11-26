@@ -61,10 +61,6 @@ header {
   background-color: #3b3b3b;
   opacity: 90%;
 }
-/* header h1, header label {
-  padding: 0 .5em;
-  padding-bottom: 1em;
-} */
 #hamburger {
   display: none;
   font-size: 2em;
@@ -89,9 +85,6 @@ nav {
   width: 200px;
 }
 
-/* .social:hover {
-  opacity: 70%;
-} */
 .menu_link {
   text-decoration: none;
   color: white;
@@ -113,6 +106,44 @@ nav {
   width: 80vw;
   height: fit-content;
   padding-left: 3rem;
+}
+
+.page_content {
+  display: flex;
+  flex-direction: column;
+}
+input, textarea {
+  color: #fff;
+  background-color: #5C5A5C;
+  border: 0;
+  width: 100%; 
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: none;
+  outline: none;
+}
+textarea {
+  resize: none;
+  height: 15em;
+}
+#send_button {
+  width: 7em;
+  height: 2em;
+  align-self: flex-end;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+
+input:invalid:focus {
+  border: 1px solid rgb(192, 1, 1);
+  box-shadow: 2px 1px 5px rgb(214, 0, 0);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+  padding-bottom: 4rem;
 }
 
 /* Swiper stuff */

@@ -1,2 +1,5 @@
-<h1>{{ collection.title }}</h1>
-
+<div id="store_items">
+  {% for product in collection.products %}
+    <div class="item_tile">{% render 'product_item' | product: product, class: 'store_item' %}</div>
+  {% endfor %}
+</div>

@@ -1,0 +1,18 @@
+
+<div class="swiper store_page">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    {% for pic in product.images %}
+      <div class="swiper-slide"><a href="{{ product.url }}"><img src="{{ pic | image_url }}" class="store_item"></a></div>
+    {% endfor %}
+
+    <div class="swiper-pagination"></div>
+  </div>
+
+  
+  <a href="{{ product.url }}" class="item_info">
+    <div>{{ product.title }}</div>
+    <div>{{ product.price | money }}</div>
+  </a>
+</div>

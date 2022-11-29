@@ -1,17 +1,65 @@
 
 const radio_button = window.document.getElementById("checkbox_toggle");
-
+const ham_x = window.document.getElementsByClassName("ham_x");
+const ham = window.document.getElementsByClassName("ham");
 console.log(radio_button);
 
+function make_x() {
+  ham[0].setAttribute("d", "M 1 1 L 10 7 L 9 8 L 0 2 M 0 2 L 1 1");
+  ham[1].style['visibility'] = "hidden";
+  ham[2].setAttribute("d", "M 0 7 L 9 1 L 10 2 L 1 8");
+  for (let i = 0; i <= 2; i++) {
+    ham[i].style['fill'] = "#754544";
+  }
+}
 
+function make_ham() {
+  ham[0].setAttribute("d", "M 0 1 L 10 1 L 10 2 L 0 2 M 0 2 L 0 1");
+  ham[1].style['visibility'] = "visible";
+  ham[2].setAttribute("d", "M 0 7 L 10 7 L 10 8 L 0 8");
+  for (let i = 0; i <= 2; i++) {
+    ham[i].style['fill'] = "#fff";
+  }
+}
 
 function ham_transform() {
   console.log("whew");
+
+    
+  make_ham();
+  if (radio_button.checked) {
+    make_x();
+  }
+
+
+
+
+
+  if (true == false) {
+  // hide the X
+  ham_x[0].style['visibility'] = "hidden";
+  ham_x[1].style['visibility'] = "hidden";
+
+  // show the hamburger
+  for (let i = 0; i <= 2; i++) {
+    ham[i].style['visibility'] = "visible";
+  }
   if (radio_button.checked) {
     console.log(radio_button.checked);
-    
+    console.log(ham_x);
+    // show the X
+    ham_x[0].style['visibility'] = "visible";
+    ham_x[1].style['visibility'] = "visible";
+
+    // hide the hamburger
+    for (let i = 0; i <= 2; i++) {
+      ham[i].style['visibility'] = "hidden";
+    }
   }
 }
+}
+
+
 radio_button.addEventListener("click", ham_transform);
 
 

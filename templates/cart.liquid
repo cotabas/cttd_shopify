@@ -1,21 +1,24 @@
 <div class="page_container">
-  <div class="cart">
+  
     {% form 'cart', cart %}
+      <div class="cart_content">
+        {% for item in cart.items %}
+          
+            <div class="cart_item_tile">
+              <img src="{{ item.image | image_url }}" class="store_item">
+              {% render 'product_item' | product: item, class: 'store_item' %}
+              <div class="cart_item_lower_container">
+                <p style="margin: 0">Quantity: {{ item.quantity }}</p>
+                <a href="{{ item.url_to_remove }}"><img src="{{ 'trash.svg' | asset_url }}" alt="remove cart item" class="trash_icon"></a>
+              </div>
+            </div>
+        {% endfor %}
+      </div>
 
-      {% for item in cart.items %}
-        <div class="cart_item">
-        
-          <div class="item_tile">
-            <img src="{{ item.image | image_url }}" class="store_item">
-            {% render 'product_item' | product: item, class: 'store_item' %}
-            <a href="{{ item.url_to_remove }}">remove</a>
-          </div>
-        </div>
-      {% endfor %}
+      <div id="cart_checkout">
+        <h3 class="product_space">Total:</h3> <h4 class="product_space">{{ cart.total_price | money }}</h4>
+        <button type="submit" name="checkout" class="button product_fix">Checkout</button>
+      {% endform %}
 
-      <button type="submit" name="checkout" class="button">Checkout</button>
-    {% endform %}
-
-    <h3>Total: </h3>{{ cart.total_price | money }}
-  </div>
+      </div>
 </div>

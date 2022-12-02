@@ -64,7 +64,7 @@ header {
 }
 #ham_svg {
   fill: #fff; 
-  height: 1em;
+  height: .5em;
 }
 #ham_svg:hover {
   opacity: 70%;
@@ -194,6 +194,7 @@ form {
   grid-template-columns: repeat(auto-fill, min(220px));
   gap: 10px;
   justify-content: center;
+  margin-top: 4em;
 }
 .item_tile, .store_item {
   height: 190px;
@@ -215,6 +216,22 @@ form {
   overflow: hidden;
   height: 22px;
 }
+
+.sort_selection {
+  width: fit-content;
+}
+
+#side_menu {
+  display: none;
+}
+#fs_button {
+  position: sticky;
+  top: 6em;
+  left: 3em;
+  z-index: 99;
+}
+
+/* Product page  */
 #product_container {
   display: flex;
   align-content: flex-start;

@@ -1,3 +1,4 @@
+// Draw the svg mobile menu hamburger change
 
 const radio_button = window.document.getElementById("checkbox_toggle");
 const ham = window.document.getElementsByClassName("ham");
@@ -23,7 +24,6 @@ function make_ham() {
 function ham_transform() {
   radio_button.checked ? make_x() : make_ham();
 }
-
 
 radio_button.addEventListener("click", ham_transform);
 

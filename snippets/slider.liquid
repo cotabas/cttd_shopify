@@ -1,11 +1,9 @@
-{% for collection in collections %}
-  {{ collection.handle }}
-{% endfor %}
+
   <div class="swiper front_page">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
-      {% for product in collections['front-slider'].products %}
+      {% for product in collections['front_slider'].products %}
 
         
           <div class="swiper-slide"><a href="{{ product.url }}"><img src="{{ product.featured_image | image_url }}" class="intro_item"></a></div>

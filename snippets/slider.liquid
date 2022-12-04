@@ -3,7 +3,7 @@
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
-      {% for product in collections['front_slider'].products %}
+      {% for product in collections['front-slider'].products %}
 
         
           <div class="swiper-slide"><a href="{{ product.url }}"><img src="{{ product.featured_image | image_url }}" class="intro_item"></a></div>

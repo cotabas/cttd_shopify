@@ -3,8 +3,13 @@
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
     <!-- Slides -->
-    {% for pic in product.images %}
-      <div class="swiper-slide"><a href="{{ product.url }}"><img src="{{ pic | image_url }}" class="store_item"></a></div>
+    {% for image in product.images %}
+      <div class="swiper-slide"><a href="{{ product.url }}">
+        <img class="store_item lazyload"
+          src="{{ image | img_url: '200x' }}"
+          data-src="{{ img_url }}">
+        {% comment %} <img src="{{ pic | image_url }}" class="store_item"> {% endcomment %}
+      </div>
     {% endfor %}
 
     <div class="swiper-pagination"></div>

@@ -135,7 +135,7 @@
   <button class="button" id="fs_button">Filter and Sort</button>    
   <div id="store_items">
     {% for product in collection.products %}
-      <div class="item_tile">{% render 'product_item' | product: product, class: 'store_item' %}</div>
+      <div class="item_tile">{% render 'product_item' | product: product %}</div>
     {% endfor %}
   </div>
 </div>

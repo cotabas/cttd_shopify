@@ -1,21 +1,17 @@
 <div class="page_container">
-  <div id="product_swiper_container">
-    <div class="swiper item_swiper product_page">
+
+    <div class="swiper front_page">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
         {% for image in product.images %}
           <div class="swiper-slide">
-          
-
             <img src="{{ image | image_url}}" class="product_page_image lazyload">
           </div>
         {% endfor %}
-
-        <div class="swiper-pagination"></div>
       </div>
+        <div class="swiper-pagination"></div>
     </div>
-  </div>
 
 
   <div id="product_container">

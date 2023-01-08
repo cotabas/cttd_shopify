@@ -5,8 +5,13 @@
         {% for item in cart.items %}
           
             <div class="cart_item_tile">
+              <a href="{{ item.url }}">
               <img src="{{ item.image | image_url }}" class="store_item">
-              {% render 'product_item' | product: item, class: 'store_item' %}
+                <div class="item_info">
+                  <strong style="color: #908e90">{{ item.title }}</strong>
+                  <div>{{ item.price | money }}</div>
+                </div>
+              </a>
               <div class="cart_item_lower_container">
                 <p style="margin: 0">Quantity: {{ item.quantity }}</p>
                 <a href="{{ item.url_to_remove }}"><img src="{{ 'trash.svg' | asset_url }}" alt="remove cart item" class="trash_icon"></a>
@@ -21,4 +26,13 @@
       {% endform %}
 
       </div>
+</div>
+
+
+
+
+<div id="store_items">
+  {% for product in collection.products %}
+    <div class="item_tile">{% render 'product_item' | product: product %}</div>
+  {% endfor %}
 </div>

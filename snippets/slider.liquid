@@ -3,11 +3,11 @@
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
-      {% for product in collections['front-slider'].products %}
-
+      {% for product in collections['front_slider'].products %}
+      <!-- front-slider in development -->
         
+      <a href="{{ product.url }}">
           <div class="swiper-slide">
-            <a href="{{ product.url }}">
 
                           
                 <img class="intro_item slideshow__image slideshow__image--{{ block.id }} lazyload"
@@ -19,11 +19,11 @@
                   data-parent-fit="cover"
                   alt="{{ block.settings.image.alt | escape }}">
               
-              </a>
 
             {% comment %} <a href="{{ product.url }}"><img src="{{ product.featured_image | image_url }}" class="intro_item"></a> {% endcomment %}
           
           </div>
+      </a>
       {% endfor %}
 
     </div>

@@ -4,15 +4,17 @@
   <div class="swiper-wrapper">
     <!-- Slides -->
     {% for image in product.images %}
-      <div class="swiper-slide"><a href="{{ product.url }}">
-        <img class="store_item lazyload"
-          src="{{ image | img_url: '200x' }}"
-          data-src="{{ img_url }}">
+      <div class="swiper-slide">
+        <a href="{{ product.url }}">
+          <img class="store_item lazyload"
+               src="{{ image | img_url: '200x' }}"
+               data-src="{{ img_url }}">
         {% comment %} <img src="{{ pic | image_url }}" class="store_item"> {% endcomment %}
+        </a>
       </div>
     {% endfor %}
   </div>
-  <div class="swiper-pagination"></div>
+  <div class="swiper-pagination-item"></div>
   <!--  <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div> -->
   
